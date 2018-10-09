@@ -1,0 +1,64 @@
+\documentclass[slidestop,compress,mathserif]{beamer}
+\mode<presentation>
+\beamertemplatenavigationsymbolsempty
+\addtobeamertemplate{navigation symbols}{}{%
+	\usebeamerfont{footline}%
+	\usebeamercolor[fg]{footline}%
+	\hspace{5em}%
+	\textbf{\insertframenumber/\inserttotalframenumber}
+}
+\usepackage[outputdir=build]{minted}
+%\usepackage{minted}
+\usepackage{latexsym}
+\usepackage{menukeys}
+\usepackage{bytefield}
+\usepackage{textcomp}
+\usepackage{varwidth}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage{macro}
+
+\usetheme{Antibes}
+\usecolortheme{lily}
+
+\AtBeginSubsection[]{
+	\begin{frame}
+	\vfill
+	\centering
+	\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+		\insertsectionhead\newline\newline\usebeamerfont{title}\insertsubsectionhead\par%
+	\end{beamercolorbox}
+	\vfill
+	\end{frame}
+}
+
+\title{VE482 Lab Notes}
+\author{Nomad Monad}
+\institute{VE482 AU18 TA Group}
+\begin{document}
+	\begin{frame} % Cover slide
+	\titlepage
+	\tiny{Source code available at https://github.com/tonyfloatersu/VE482-LAB-Note}
+	\end{frame}
+
+	\begin{frame}[allowframebreaks]
+		\small
+		\frametitle{Table Of Contents}
+		\tableofcontents
+	\end{frame}
+	\include{week6}
+	%\include{week2}
+	%\include{week3}
+	%\include{week4}
+	%\include{week5}
+	%\include{week6}
+	%\include{week7}
+	%\include{week8}
+	%\include{week9}
+	%\include{week10}
+	%\include{week11}
+	%\include{week12}
+
+\end{document}
