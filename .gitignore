@@ -9,3 +9,5 @@ _minted-main/*
 *.synctex.gz
 *.toc
 *.vrb
+*.o
+*.so
