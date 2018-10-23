@@ -1,0 +1,26 @@
+sh-4.4$ cat dumb1.cpp
+int var_0 = 19;
+sh-4.4$ cat dumb2.cpp
+extern int var_0;
+int soudayo() {
+	return var_0;
+}
+sh-4.4$ cat dumb_main.cpp
+extern int soudayo();
+int main() {
+	return soudayo();
+}
+sh-4.4$ g++ -c dumb1.cpp -o dumb1.o
+sh-4.4$ g++ -c dumb2.cpp -o dumb2.o
+sh-4.4$ ar rcs libdumb1.a dumb1.o
+sh-4.4$ ar rcs libdumb2.a dumb2.o
+sh-4.4$ g++ -L. -ldumb1 -ldumb2 dumb_main.cpp -o a.out
+/usr/bin/ld: cannot find -ldumb2
+collect2: error: ld returned 1 exit status
+sh-4.4$ g++ -L. -ldumb2 -ldumb1 dumb_main.cpp -o a.out
+/usr/bin/ld: cannot find -ldumb1
+collect2: error: ld returned 1 exit status
+sh-4.4$ g++ dumb_main.cpp -L. -ldumb2 -ldumb1
+sh-4.4$ ./a.out
+sh-4.4$ echo $?
+19

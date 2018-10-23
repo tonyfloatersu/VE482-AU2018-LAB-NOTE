@@ -1,3 +1,8 @@
+%%% Local Variables:
+%%% coding: utf-8
+%%% TeX-command-extra-options: "-shell-escape, -oytput-directory=build"
+%%% End:
+
 \documentclass[slidestop,compress,mathserif]{beamer}
 \mode<presentation>
 \beamertemplatenavigationsymbolsempty
@@ -7,13 +12,13 @@
 	\hspace{5em}%
 	\textbf{\insertframenumber/\inserttotalframenumber}
 }
-\usepackage[outputdir=build]{minted}
-%\usepackage{minted}
+\usepackage{minted}
 \usepackage{latexsym}
 \usepackage{menukeys}
 \usepackage{bytefield}
 \usepackage{textcomp}
 \usepackage{varwidth}
+\usepackage{naivemoha}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
@@ -35,30 +40,18 @@
 }
 
 \title{VE482 Lab Notes}
-\author{Nomad Monad}
+\author{Yihao LIU, Hang SU, Yue YAO}
 \institute{VE482 AU18 TA Group}
 \begin{document}
-	\begin{frame} % Cover slide
+\begin{frame} % Cover slide
 	\titlepage
 	\tiny{Source code available at https://github.com/tonyfloatersu/VE482-LAB-Note}
-	\end{frame}
+\end{frame}
 
-	\begin{frame}[allowframebreaks]
-		\small
-		\frametitle{Table Of Contents}
-		\tableofcontents
-	\end{frame}
-	\include{week6}
-	%\include{week2}
-	%\include{week3}
-	%\include{week4}
-	%\include{week5}
-	%\include{week6}
-	%\include{week7}
-	%\include{week8}
-	%\include{week9}
-	%\include{week10}
-	%\include{week11}
-	%\include{week12}
-
+\begin{frame}[allowframebreaks]
+    \small
+    \frametitle{Table Of Contents}
+    \tableofcontents
+\end{frame}
+\include{week7}
 \end{document}

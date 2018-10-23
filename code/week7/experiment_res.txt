@@ -1,0 +1,14 @@
+sh-4.4$ g++ dumb.cpp -o dynamic_dumb
+sh-4.4$ ldd ./dynamic_dumb 
+	linux-vdso.so.1 (0x00007fffa19a6000)
+	libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007f0c8b64a000)
+	libm.so.6 => /usr/lib/libm.so.6 (0x00007f0c8b4c5000)
+	libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f0c8b4ab000)
+	libc.so.6 => /usr/lib/libc.so.6 (0x00007f0c8b2e7000)
+	/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f0c8b829000)
+sh-4.4$ g++ -static -static-libgcc -static-libstdc++ dumb.cpp -o standalone_dumb
+sh-4.4$ ldd ./standalone_dumb 
+	not a dynamic executable
+sh-4.4$ ls -al | grep -E '(dynamic|stand)'
+-rwxr-xr-x 1 anthonysu anthonysu   18712 Oct 22 19:19 dynamic_dumb
+-rwxr-xr-x 1 anthonysu anthonysu 2181936 Oct 22 19:19 standalone_dumb

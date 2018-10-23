@@ -1,0 +1,7 @@
+sh-4.4$ g++ -fPIC -shared dumb1.cpp -o libdumb1.so
+sh-4.4$ g++ -fPIC -shared dumb2.cpp -L. -ldumb1 -o libdumb2.so
+sh-4.4$ export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+sh-4.4$ g++ -Wl,--as-needed dumb_main.cpp -L. -ldumb2
+sh-4.4$ ./a.out
+sh-4.4$ echo $?
+19
